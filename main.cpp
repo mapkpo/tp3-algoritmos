@@ -10,11 +10,10 @@ int main() {
     Deposito deposito;
     deposito.cargarMatrizDesdeArchivo("adyacencia.csv");
 
-    int s = 0;  // vertice de inicio
-    int t = 584;  // vertice final
+    
 
-    int distanciaMinima = deposito.distancia(s, t);
-    std::cout << distanciaMinima << std::endl;
+    int distanciaMinima = deposito.distancia(0, 152);
+    cout<<distanciaMinima<<endl;
 
     return 0;
 }

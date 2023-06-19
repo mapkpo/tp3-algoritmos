@@ -105,7 +105,7 @@ private:
             S[actual] = MIEMBRO;
 
             contador = contador + 1;
-            std::cout << "iteracion: " << contador << std::endl;
+            //std::cout << "iteracion: " << contador << std::endl;
         }
 
         return D;
