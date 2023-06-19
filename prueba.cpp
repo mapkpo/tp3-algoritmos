@@ -23,6 +23,7 @@ int *dijkstra(int** matriz,int s, int t, int Pre[])
  int S[N];
  int actual, i, k, b;
  int menordist, nuevadist;
+ int contador = 0;
 
  for(i=0;i<N;i++){
                          S[i]=NO_MIEMBRO;
@@ -49,14 +50,17 @@ int *dijkstra(int** matriz,int s, int t, int Pre[])
                                
                   actual=k; // actual se ubica en el nodo de menor distancia
                   S[actual]=MIEMBRO;
-                  printf("\n\n         D     S     Pre");
+                  //printf("\n\n         D     S     Pre");
                   for(i=0;i<N;i++){
-                           printf("\n[%2i] %5i %5i %5i     ",i,D[i], S[i],Pre[i]);
+                           //printf("\n[%2i] %5i %5i %5i     ",i,D[i], S[i],Pre[i]);              ////////////////////
                    } 
       
                   //printf("\n\n   D[%i]=%3i ",actual,D[actual]);
-                  
-                   //system("PAUSE");
+                
+                contador=contador+1;  
+                cout<<"iteracion: "<<contador<<endl;
+
+                //system("PAUSE");
  }//fin while
  return D;
 }// fin dijkstra
@@ -108,7 +112,7 @@ int main() {
     int *pdist, i, j, P[N],s,t;
 
     s=0;  // vertice de inicio
-    t=3;  // vertice final
+    t=719;  // vertice final
 
     pdist=dijkstra(matriz,s,t,P);
 
