@@ -37,7 +37,7 @@ public:
     int size();
     void borrar(void); //borra la cabeza
     void borrar_last(); //borra el ultimo
-    void addOrdenado(T d); //agrega un valor y lo ordena de menor a mayor
+    void ordenarBurbuja();
 };
 
 template <class T>
@@ -116,18 +116,30 @@ void Lista<T>::borrar_last()
 }
 
 template <class T>
-void Lista<T>::addOrdenado(T d)
+void Lista<T>::ordenarBurbuja()
 {
-    if (this->esvacia() || d < this->cabeza()) {
-        this->add(d);
+    int n = this->size();
+    if (n <= 1)
         return;
-    }
 
-    Nodo<T>* nuevo = new Nodo<T>(d);
-    Nodo<T>* actual = czo;
-    while (actual->get_next() && d >= actual->get_next()->get_dato()) {
-        actual = actual->get_next();
-    }
-    nuevo->set_next(actual->get_next());
-    actual->set_next(nuevo);
+    bool intercambio;
+    do {
+        intercambio = false;
+        Nodo<T>* actual = czo;
+        Nodo<T>* siguiente = actual->get_next();
+
+        for (int i = 0; i < n - 1; i++) {
+            if (actual->get_dato() > siguiente->get_dato()) {
+                T temp = actual->get_dato();
+                actual->set_dato(siguiente->get_dato());
+                siguiente->set_dato(temp);
+                intercambio = true;
+            }
+
+            actual = siguiente;
+            siguiente = siguiente->get_next();
+        }
+    } while (intercambio);
 }
+
+
