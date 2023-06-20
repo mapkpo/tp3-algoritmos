@@ -27,6 +27,20 @@ int main() {
     robot.agregarProducto(259);
     robot.agregarProducto(260);
     robot.agregarProducto(254);
+    robot.agregarProducto(308);
+    robot.agregarProducto(125);
+    robot.agregarProducto(4);
+    robot.agregarProducto(98);
+    robot.agregarProducto(102);
+    robot.agregarProducto(666);
+    robot.agregarProducto(321);
+    robot.agregarProducto(54);
+    robot.agregarProducto(12);
+    robot.agregarProducto(25);
+    robot.agregarProducto(25);
+    robot.agregarProducto(37);
+
+
   
     robot.realizarPedido();
 
