@@ -16,15 +16,16 @@ int main() {
 
     Lista<int> nueva;
 
-    nueva.add(25);
-    nueva.add(80);
-    nueva.add(25);
-    nueva.add(99);
-    nueva.add(25);
+   nueva.add(58);
+   nueva.add(20);
+   nueva.add(1);
+   nueva.add(58);
+   nueva.add(548);
+   nueva.add(700);
+   nueva.ordenarBurbuja();
     cout<<nueva.toPrint()<<endl;
-    nueva.ordenamientoInsercion();
-    //cout<<nueva.size()<<endl;
-    cout<<nueva.toPrint()<<endl;
+  
+
 
     return 0;
 }
