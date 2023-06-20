@@ -36,7 +36,8 @@ int main() {
 al ser tan grande su matriz de adyacencia no es posible cargarla en el stack asi que debe ser cargada en el heap desde un
 archico csv que la contiene.
 se hace uso de otra matriz de direcciones para obtener los numeros de nodos segun su fila y columna en los estantes esta si
-esta implementada en el stack ya que es pequeña. tambien se implementa una lista que es la que guarda los productos.*/
+esta implementada en el stack ya que es pequeña. tambien se implementa una lista que es la que guarda los productos.
+y se hace uso del ordenamiento burbuja para ordenar de menor a mayor los productos en la lista*/
 
 
 
