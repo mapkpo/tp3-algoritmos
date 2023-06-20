@@ -54,7 +54,7 @@ public:
             distanciaTotal += distancia;
 
             // Recorrer el camino más corto e ir actualizando el nodo actual
-            cout << "Se recorrió desde el nodo " << nodoActual << " hasta el nodo " << producto << endl;
+            cout << "Se recorrio desde el nodo " << nodoActual << " hasta el nodo " << producto << endl;
             cout << "Agregando el producto " << producto << endl;
             nodoActual = producto;
 
