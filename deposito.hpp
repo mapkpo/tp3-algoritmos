@@ -53,11 +53,9 @@ public:
     int distancia(int s, int t) {
         int* pdist;
         int P[N];
-
         pdist = dijkstra(s, t, P);
-
         int distanciaMinima = pdist[t];
-
+        camino(P,s,t);
         return distanciaMinima;
     }
 
@@ -112,4 +110,15 @@ private:
 
         return D;
     }
+
+
+void camino(int P[], int s, int t)
+{  if (t==s) cout<< s<<"  ";
+   else{
+        camino(P,s,P[t]);
+        cout<<t<<"  ";
+   }
+   cout<<endl;
+}
+
 };
