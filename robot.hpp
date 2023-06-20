@@ -66,7 +66,7 @@ public:
 
             // Verificar si el volumen alcanzó su capacidad máxima
             if (volumenActual() == LLENO) {
-                cout << "El robot está lleno. Descargando productos..." << endl;
+                cout << "El robot esta lleno. Descargando productos..." << endl;
                 descargarVolumen();
                 nodoActual = 0;  // Volver al nodo cero después de vaciar el robot
             }

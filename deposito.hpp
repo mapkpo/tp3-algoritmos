@@ -118,7 +118,6 @@ void camino(int P[], int s, int t)
         camino(P,s,P[t]);
         cout<<t<<"  ";
    }
-   cout<<endl;
 }
 
 };
