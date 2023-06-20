@@ -11,41 +11,22 @@ int main() {
 
     robot robot("adyacencia.csv");
 
-    robot.agregarProducto(501);
-    robot.agregarProducto(5);
-    robot.agregarProducto(5);
-    robot.agregarProducto(702);
-    robot.agregarProducto(250);
-    robot.agregarProducto(251);
-    robot.agregarProducto(252);
-    robot.agregarProducto(253);
-    robot.agregarProducto(254);
-    robot.agregarProducto(255);
-    robot.agregarProducto(256);
-    robot.agregarProducto(257);
-    robot.agregarProducto(258);
-    robot.agregarProducto(259);
-    robot.agregarProducto(260);
-    robot.agregarProducto(254);
-    robot.agregarProducto(308);
-    robot.agregarProducto(125);
-    robot.agregarProducto(4);
-    robot.agregarProducto(98);
-    robot.agregarProducto(102);
-    robot.agregarProducto(666);
-    robot.agregarProducto(321);
-    robot.agregarProducto(54);
-    robot.agregarProducto(12);
-    robot.agregarProducto(25);
-    robot.agregarProducto(25);
-    robot.agregarProducto(37);
+    robot.agregarProducto(1,2,1,2);           //trio p,e,m,c    p={1,2,3}   e={1 al 15} m={1 al 16}   c es la cantidad de ese producto a agregar
+    robot.agregarProducto(3,9,8,5);
+    robot.agregarProducto(2,1,4,8);
+    robot.agregarProducto(1,6,1,1);
+    robot.agregarProducto(3,12,16,5);
+    robot.agregarProducto(3,12,15,4);
+
 
 
   
     robot.realizarPedido();
 
+    
 
-    system("pause");
+
+    system("pause"); 
 
 }
 

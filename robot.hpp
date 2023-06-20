@@ -39,8 +39,12 @@ public:
         deposito.cargarMatrizDesdeArchivo(archivo);
     }
 
-    void agregarProducto(int a){
-        lista.add(a);
+    void agregarProducto(int p, int e, int m, int c){
+        int temp = c;
+        while(temp>0){
+        lista.add(deposito.getDireccion(p,e,m));
+        temp-=1;
+        }
     }
 
     void realizarPedido(){
@@ -54,8 +58,8 @@ public:
             distanciaTotal += distancia;
 
             // Recorrer el camino más corto e ir actualizando el nodo actual
-            cout << "Se recorrio desde el nodo " << nodoActual << " hasta el nodo " << producto << endl;
-            cout << "Agregando el producto " << producto << endl;
+            cout << "Se recorrio desde el nodo " << nodoActual+1 << " hasta el nodo " << producto+1 << endl;
+            cout << "Agregando el producto " << producto+1 << endl;
             nodoActual = producto;
 
             // "Recoger" el producto (eliminarlo de la lista)
@@ -66,11 +70,14 @@ public:
 
             // Verificar si el volumen alcanzó su capacidad máxima
             if (volumenActual() == LLENO) {
-                cout << "El robot esta lleno. Descargando productos..." << endl;
+                cout << "El robot esta lleno. Volviendo a inicio. Descargando productos y retornando" << endl;
                 descargarVolumen();
+                distanciaTotal += deposito.distancia(nodoActual, 0);
                 nodoActual = 0;  // Volver al nodo cero después de vaciar el robot
-            }
+            }            
         }
+        distanciaTotal += deposito.distancia(nodoActual, 0);
+
         cout << "La distancia total recorrida fue: " << distanciaTotal << endl;
 
     }
