@@ -40,39 +40,35 @@ public:
     void ordenarBurbuja();
 };
 
-template <class T>
-void Lista<T>::add(T d)
+template <class T> void Lista<T>::add(T d)
 {
     Nodo<T>* nuevo = new Nodo<T>(d);
     nuevo->set_next(czo);
     czo = nuevo;
+    this->ordenarBurbuja();
 }
 
-template <class T>
-bool Lista<T>::esvacia(void)
+template <class T> bool Lista<T>::esvacia(void)
 {
     return czo->es_vacio();
 }
 
-template <class T>
-T Lista<T>::cabeza(void)
+template <class T> T Lista<T>::cabeza(void)
 {
     if (this->esvacia()) {
         cout << " Error, Cabeza de lista vacia";
-        return NULL;
+        return 0;
     }
     return czo->get_dato();
 }
 
-template <class T>
-Lista<T>* Lista<T>::resto(void)
+template <class T> Lista<T>* Lista<T>::resto(void)
 {
     Lista* l = new Lista(czo->get_next());
     return (l);
 }
 
-template <class T>
-string Lista<T>::toPrint()
+template <class T> string Lista<T>::toPrint()
 {
     if (this->esvacia()) {
         return "";
@@ -84,16 +80,14 @@ string Lista<T>::toPrint()
     }
 }
 
-template <class T>
-int Lista<T>::size()
+template <class T> int Lista<T>::size()
 {
     if (this->esvacia())
         return 0;
     return 1 + this->resto()->size();
 }
 
-template <class T>
-void Lista<T>::borrar(void)
+template <class T> void Lista<T>::borrar(void)
 { //borra el nodo cabeza
     if (!this->esvacia()) {
         Nodo<T>* tmp = czo;
@@ -102,8 +96,7 @@ void Lista<T>::borrar(void)
     }
 }
 
-template <class T>
-void Lista<T>::borrar_last()
+template <class T> void Lista<T>::borrar_last()
 { // borra el ultimo nodo
     if (!this->esvacia()) {
         if ((czo->get_next())->get_next() == NULL) {
@@ -115,8 +108,7 @@ void Lista<T>::borrar_last()
     }
 }
 
-template <class T>
-void Lista<T>::ordenarBurbuja()
+template <class T> void Lista<T>::ordenarBurbuja()
 {
     int n = this->size();
     if (n <= 1)
@@ -141,5 +133,3 @@ void Lista<T>::ordenarBurbuja()
         }
     } while (intercambio);
 }
-
-

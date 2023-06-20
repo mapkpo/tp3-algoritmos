@@ -3,31 +3,36 @@
 #include <sstream>
 #include <string>
 #include <cstdlib>
-#include "deposito.hpp"
-#include "lista.hpp"
+
+#include "robot.hpp"
 
 using namespace std;
 int main() {
-    Deposito deposito;
-    deposito.cargarMatrizDesdeArchivo("adyacencia.csv");
 
-    int distanciaMinima = deposito.distancia( 152 , 152 );
-    cout<<distanciaMinima<<endl;
+    robot robot("adyacencia.csv");
 
-    Lista<int> nueva;
-
-   nueva.add(58);
-   nueva.add(20);
-   nueva.add(1);
-   nueva.add(58);
-   nueva.add(548);
-   nueva.add(700);
-   nueva.ordenarBurbuja();
-    cout<<nueva.toPrint()<<endl;
+    robot.agregarProducto(501);
+    robot.agregarProducto(5);
+    robot.agregarProducto(5);
+    robot.agregarProducto(702);
+    robot.agregarProducto(250);
+    robot.agregarProducto(251);
+    robot.agregarProducto(252);
+    robot.agregarProducto(253);
+    robot.agregarProducto(254);
+    robot.agregarProducto(255);
+    robot.agregarProducto(256);
+    robot.agregarProducto(257);
+    robot.agregarProducto(258);
+    robot.agregarProducto(259);
+    robot.agregarProducto(260);
+    robot.agregarProducto(254);
   
+    robot.realizarPedido();
 
 
-    return 0;
+    system("pause");
+
 }
 
 

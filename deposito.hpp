@@ -4,6 +4,8 @@
 #include <string>
 #include <cstdlib>
 
+using namespace std;
+
 const int N = 720;
 #define MIEMBRO   1
 #define NO_MIEMBRO 0
